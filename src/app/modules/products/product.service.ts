@@ -44,5 +44,5 @@ export const productServices = {
     getAllProducts,
     getOneProductById,
     updateProductById,
-    deleteProduct
+    deleteProduct,
 }
