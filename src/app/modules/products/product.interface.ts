@@ -1,6 +1,6 @@
 export type TProductVariants = {
   type: string;
-  value: string;
+  size: string;
 };
 
 export type TInventory = {
