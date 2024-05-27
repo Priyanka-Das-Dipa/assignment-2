@@ -12,7 +12,11 @@ app.use('/api', ProductRoute);
 app.use('/api', OrderRoute);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World');
+  res.send('Hello, Welcome to my E-commerce website live server!');
+});
+
+app.get('/*', (req: Request, res: Response) => {
+  res.status(200).json('Sorry, this Route not found!!');
 });
 
 export default app;

@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import ProductZodValidationSchema from './product.validation';
 import { productServices } from './product.service';
 
-// create new data to the database
+// create new product to the database
 const createProduct = async (req: Request, res: Response) => {
   try {
     const productData = req.body;
@@ -22,7 +22,7 @@ const createProduct = async (req: Request, res: Response) => {
   }
 };
 
-// get all the data from the database
+// get all the product from the database
 const getAllProduct = async (req: Request, res: Response) => {
   try {
     const result = await productServices.getAllProducts();

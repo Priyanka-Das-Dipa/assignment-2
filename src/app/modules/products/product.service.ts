@@ -9,15 +9,25 @@ const createProductDB = async (productData : TProduct)=>{
 }
 
 // get all the data from the database
-const getAllProducts = async () => {
-    const product = await Product.find();
-    return product;
+const getAllProducts = async ( searchProduct ?: string | unknown) => {
+    if(searchProduct){
+        const SearchProducts = await Product.find({
+            $or : [{name : {$regex : searchProduct}}, {category : {$regex : searchProduct}}]
+        })
+        return SearchProducts;
+
+    }else{
+        const product = await Product.find();
+        return product;
+    }
+
+   
 };
 
 // get only one data by using the product ID
 const getOneProductById = async ( id : string) =>{
     const product = await Product.findById(id);
-    return product
+    return product;
 
 }
 
