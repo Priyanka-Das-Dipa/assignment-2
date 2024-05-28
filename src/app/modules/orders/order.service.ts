@@ -4,7 +4,8 @@ import Order from './order.model';
 
 // created the order
 const createOrderDB = async (orderData: TOrder) => {
-  const findProduct = await Product.findById({ _id: orderData.productId });
+  console.log(orderData);
+  const findProduct : any = await Product.findById({ _id: orderData.productId });
   if (findProduct === undefined || findProduct === null) {
     return 'Invalid Product Id!!';
   }
