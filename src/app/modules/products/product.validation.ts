@@ -7,7 +7,7 @@ const InventoryZodValidationSchema = z.object({
 
 const ProductZodVariantValidationSchema = z.object({
   type: z.string().min(1, 'Variant type must be string.'),
-  size: z.string().min(1, 'Variant size must be string'),
+  value: z.string().min(1, 'Variant size must be string'),
 });
 
 const ProductZodValidationSchema = z.object({

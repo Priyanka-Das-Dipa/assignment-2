@@ -1,10 +1,8 @@
-
 // interface declaration for Variants
 export type TProductVariants = {
   type: string;
-  size: string;
+  value: string;
 };
-
 
 // interface declaration for Inventory type
 export type TInventory = {

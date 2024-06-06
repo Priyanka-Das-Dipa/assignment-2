@@ -25,7 +25,7 @@ const getAllProducts = async (searchProduct?: string | unknown) => {
 
 // get only one data by using the product ID
 const getOneProductById = async (id: string) => {
-  const product = await Product.findById(id);
+  const product = await Product.findById({ _id: id });
   return product;
 };
 

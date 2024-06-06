@@ -6,6 +6,7 @@ import { productServices } from './product.service';
 const createProduct = async (req: Request, res: Response) => {
   try {
     const productData = req.body;
+    console.log(productData);
     const validateData = ProductZodValidationSchema.parse(productData);
     const result = await productServices.createProductDB(validateData);
     res.status(200).send({
@@ -17,7 +18,7 @@ const createProduct = async (req: Request, res: Response) => {
     res.status(500).json({
       success: false,
       message: 'Something went wrong',
-      error: error.issues.map((item: { message: unknown }) => item.message),
+      error: error.issues?.map((item: { message: unknown }) => item.message),
     });
   }
 };

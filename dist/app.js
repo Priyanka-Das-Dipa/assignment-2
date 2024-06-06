@@ -13,6 +13,9 @@ app.use(express_1.default.json());
 app.use('/api', product_route_1.ProductRoute);
 app.use('/api', order_route_1.OrderRoute);
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Hello, Welcome to my E-commerce website live server!');
+});
+app.get('/*', (req, res) => {
+    res.status(200).json('Sorry, this Route not found!!');
 });
 exports.default = app;
